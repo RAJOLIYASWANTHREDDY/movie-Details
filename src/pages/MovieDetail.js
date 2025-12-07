@@ -5,10 +5,10 @@ import { useParams } from "react-router-dom";
 import Backup from "../assets/images/Back_up.webp";
 
 export const MovieDetail = () => {
-  const params = useParams();
+  
   const [movie, setMovie] = useState({});
   const image = movie.poster_path ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}` : Backup ;
-
+const params = useParams();
   useEffect(() => {
     async function fetchMovie(){
       const response = await fetch(`https://api.themoviedb.org/3/movie/${params.id}?api_key=b80d59c33d6d57ed9c7e3713f91c188a`);
